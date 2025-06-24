@@ -64,7 +64,7 @@ export class SlackV2 implements INodeType {
 					required: true,
 					displayOptions: {
 						show: {
-							authentication: ['accessToken'],
+							authentication: ['legacyAccessToken'],
 						},
 					},
 				},
@@ -77,6 +77,15 @@ export class SlackV2 implements INodeType {
 						},
 					},
 				},
+				{
+					name: 'accessTokenOAuth2Api',
+					required: true,
+					displayOptions: {
+						show: {
+							authentication: ['accessToken'],
+						},
+					},
+				},
 			],
 			webhooks: sendAndWaitWebhooksDescription,
 			properties: [
@@ -86,15 +95,19 @@ export class SlackV2 implements INodeType {
 					type: 'options',
 					options: [
 						{
+							name: 'OAuth2',
+							value: 'oAuth2',
+						},
+						{
 							name: 'Access Token',
 							value: 'accessToken',
 						},
 						{
-							name: 'OAuth2',
-							value: 'oAuth2',
+							name: 'Access Token (Legacy)',
+							value: 'legacyAccessToken',
 						},
 					],
-					default: 'accessToken',
+					default: 'oAuth2',
 				},
 
 				{

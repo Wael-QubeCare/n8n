@@ -22,6 +22,7 @@
   ],
   "n8n": {
     "credentials": [
+      "dist/credentials/AccessTokenOAuth2Api.credentials.js",
       "dist/credentials/ActionNetworkApi.credentials.js",
       "dist/credentials/ActiveCampaignApi.credentials.js",
       "dist/credentials/AcuitySchedulingApi.credentials.js",

@@ -69,6 +69,15 @@ const versionDescription: INodeTypeDescription = {
 				},
 			},
 		},
+		{
+			name: 'accessTokenOAuth2Api',
+			required: true,
+			displayOptions: {
+				show: {
+					authentication: ['accessToken'],
+				},
+			},
+		},
 	],
 	webhooks: sendAndWaitWebhooksDescription,
 	properties: [
@@ -85,6 +94,10 @@ const versionDescription: INodeTypeDescription = {
 				{
 					name: 'Service Account',
 					value: 'serviceAccount',
+				},
+				{
+					name: 'Access Token',
+					value: 'accessToken',
 				},
 			],
 			default: 'oAuth2',

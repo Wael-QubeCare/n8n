@@ -42,9 +42,40 @@ export class YouTube implements INodeType {
 			{
 				name: 'youTubeOAuth2Api',
 				required: true,
+				displayOptions: {
+					show: {
+						authentication: ['oAuth2'],
+					},
+				},
+			},
+			{
+				name: 'accessTokenOAuth2Api',
+				required: true,
+				displayOptions: {
+					show: {
+						authentication: ['accessToken'],
+					},
+				},
 			},
 		],
 		properties: [
+			{
+				displayName: 'Authentication',
+				name: 'authentication',
+				type: 'options',
+				options: [
+					{
+						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						name: 'OAuth2 (recommended)',
+						value: 'oAuth2',
+					},
+					{
+						name: 'Access Token',
+						value: 'accessToken',
+					},
+				],
+				default: 'oAuth2',
+			},
 			{
 				displayName: 'Resource',
 				name: 'resource',
